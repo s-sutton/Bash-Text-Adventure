@@ -34,6 +34,35 @@ echo "2 - Look around."
 echo "3 - Get up."
 
 read -p "What do you do?" option1
+room="none"
+ case $option1
+  1) clear
+   echo "You watch the clouds, making up images they resemble as you take in the warm sun. You have nowhere you need to be any time soon, so you enjoy this moment while it lasts. Life is all about the little things."
+   read -p "Press any key to continue." anykey
+  ;;
+  2) clear
+   echo "The sand around you is glistening white in the sunny afternoon. The ocean in front of you seems to stretch forever, outside of what appears to be a small island on the horizon."
+   echo "The beach itself runs in an almost perfectly straight line for a few blocks in either direction, before curving backwards out of sight."
+   echo "Behind you, the high tide lines end at a densely packed forest. Immediately behind you is the entrance to a trail winding into the trees, the dense canopy arched overhead like a vaulted ceiling."
+   room="beach"
+  ;;
+  3) clear
+   echo "You stand up without heeding your environment, tripping over the sand and sliding into the ocean. You hit your head on a rock and faint from the pain, never to awaken again."
+  ;;
+function callroom {
+ case $room in
+  "beach") echo "You're at the beach"
+   sleep 2
+   room="hut"
+   callroom
+   ;;
+  "sea") echo "You're at sea."
+   ;;
+  "hut") echo "You're in a hut."
+   ;;
+esac
+}
+callroom
 
 sleep 3
 clear
