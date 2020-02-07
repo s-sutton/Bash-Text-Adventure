@@ -11,5 +11,7 @@ echo "2. I don't know."
 echo "3. Long enough to lose track of time."
 echo "4. I was asleep the exact lenght I meant to be. [Lie]"
 read -p "Your response:" option1
-if $option1="4"; then echo "I know you're lying, I can read the brackets."
-read -p "Next." option2
+if [[ "$option1" = "4" ]]
+ then echo "I know you're lying, I can read the brackets."
+ else read -p "Next." option2
+fi
