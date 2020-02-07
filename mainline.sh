@@ -38,7 +38,6 @@ room="none"
  case $option1 in
   "1") clear
    echo "You watch the clouds, making up images they resemble as you take in the warm sun. You have nowhere you need to be any time soon, so you enjoy this moment while it lasts. Life is all about the little things."
-   read -p "Press any key to continue." anykey
   ;;
   "2") clear
    echo "The sand around you is glistening white in the sunny afternoon. The ocean in front of you seems to stretch forever, outside of what appears to be a small island on the horizon."
@@ -50,6 +49,7 @@ room="none"
    echo "You stand up without heeding your environment, tripping over the sand and sliding into the ocean. You hit your head on a rock and faint from the pain, never to awaken again."
   ;;
  esac
+read -p "Press any key to continue." anykey
 
 function callroom {
  case $room in
